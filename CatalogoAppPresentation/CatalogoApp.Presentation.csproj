@@ -6,4 +6,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CatalogoAppAplication\CatalogoApp.Aplication.csproj" />
+    <ProjectReference Include="..\CatalogoAppInfrastuctrure\CatalogoApp.Infrastuctrure.csproj" />
+  </ItemGroup>
+
 </Project>
