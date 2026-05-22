@@ -9,7 +9,7 @@ html {
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+  box-shadow: 0 0 0 0.1rem #1a1a1a, 0 0 0 0.25rem #00ff00;
 }
 
 html {
@@ -19,6 +19,114 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-color: #0b0c10;
+  color: #e0e6ed;
+  font-family: 'Consolas', 'Courier New', Courier, monospace;
+}
+
+/* Hacker Theme Styling */
+.text-primary {
+  color: #00ff00 !important;
+}
+
+.bg-primary {
+  background-color: #00ff00 !important;
+  color: #0b0c10;
+}
+
+.btn-primary {
+  background-color: #00ff00;
+  border-color: #00cc00;
+  color: #0b0c10;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #00cc00;
+  border-color: #009900;
+  color: #0b0c10;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
+  transform: translateY(-2px);
+}
+
+.btn-outline-secondary {
+  color: #00ff00;
+  border-color: #00ff00;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+  background-color: rgba(0, 255, 0, 0.1);
+  color: #00ff00;
+  border-color: #00ff00;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+.card {
+  background-color: #12141a;
+  border: 1px solid #1f232e;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover {
+  border-color: #00ff00;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+}
+
+.card-title {
+  color: #00ff00;
+}
+
+.text-muted {
+  color: #8b9eb3 !important;
+}
+
+.bg-light {
+    background-color: #12141a !important;
+}
+
+.bg-white {
+    background-color: #12141a !important;
+}
+
+.border {
+    border-color: #1f232e !important;
+}
+
+/* Fix navbar for dark theme */
+.navbar-light .navbar-nav .nav-link {
+    color: #e0e6ed;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #00ff00;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+.navbar-light .navbar-brand {
+    color: #00ff00;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.navbar-light .navbar-brand:hover {
+    color: #00ff00;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #00ff00;
+  text-transform: uppercase;
+}
+
+hr {
+  border-color: #333;
 }
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
