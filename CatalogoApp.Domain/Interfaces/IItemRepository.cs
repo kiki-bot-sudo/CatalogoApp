@@ -1,15 +1,15 @@
-﻿using CatalogoApp.Domain.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using CatalogoApp.Domain.Models;
 
 namespace CatalogoApp.Domain.Interfaces
 {
     public interface IItemRepository
     {
-        List<Item> ObtenerTodos();
-        Item? ObtenerPorId(int id);
-        void Agregar(Item item);
-        void Eliminar(int id);
+        List<Item> GetAll();
+        Item GetById(Guid id);
+        void Add(Item item);
+        void Update(Item item);
+        void Eliminar(Guid id);
     }
 }

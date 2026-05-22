@@ -7,8 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CatalogoApp.Domain\CatalogoApp.Domain.csproj" />
     <ProjectReference Include="..\CatalogoAppAplication\CatalogoApp.Aplication.csproj" />
     <ProjectReference Include="..\CatalogoAppInfrastuctrure\CatalogoApp.Infrastuctrure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Data\items.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

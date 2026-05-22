@@ -1,0 +1,36 @@
+﻿@model List<CatalogoApp.Domain.Models.Item>
+ 
+<h1>Catálogo de Videojuegos</h1>
+ 
+<!-- Filtro por Genero -->
+<div>
+    <a asp-action="Index">Todos</a>
+    @foreach (var gen in (ViewBag.Generos as List<string>) ?? new List<string>())
+    {
+        <span> | </span>
+        <a asp-action="Index" asp-route-genero="@gen">@gen</a>
+    }
+</div>
+ 
+<hr />
+ 
+<!-- Lista de Items -->
+<ul class="list-unstyled">
+    @foreach (var item in Model)
+    {
+        <li class="media mb-4">
+            <a asp-action="Detalle" asp-route-id="@item.Id" style="text-decoration: none; color: inherit; display: flex;">
+                <div class="media-body">
+                    <h5 class="mt-0 mb-1">@item.Titulo</h5>
+                    <p class="mb-1">@item.Descripcion</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <small class="text-muted">@item.Ano</small>
+                    </div>
+                </div>
+            </a>
+        </li>
+    }
+</ul>
+ 
+<hr />
+<a asp-action="Agregar">+ Agregar videojuego</a>

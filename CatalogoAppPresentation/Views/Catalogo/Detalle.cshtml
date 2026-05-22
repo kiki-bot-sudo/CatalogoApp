@@ -1,0 +1,74 @@
+﻿@model CatalogoApp.Domain.Models.Item
+ 
+<h1>@Model.Titulo</h1>
+ 
+<p><strong>Género:</strong> @Model.Genero</p>
+<p><strong>Consola:</strong> @Model.Consola</p>
+<p><strong>Año:</strong> @Model.Ano</p>
+<p><strong>Descripción:</strong> @Model.Descripcion</p>
+ 
+<hr />
+<a asp-action="Index">&larr; Volver al catálogo</a>
+
+<p class="card-text">@Model.Descripcion</p>
+
+<hr class="mt-4" />
+
+<form asp-action="Eliminar" asp-route-id="@Model.Id" method="post" onsubmit="return confirm('¿Estás seguro de que quieres eliminar este videojuego?');">
+    <button type="submit" class="btn btn-danger">Eliminar Videojuego</button>
+</form>
+
+<hr class="mt-4" />
+
+<h4 class="mt-4">Reseñas</h4>
+            
+@if (Model.Reviews != null && Model.Reviews.Any())
+{
+    <div class="list-group mb-4">
+        @foreach (var pReview in Model.Reviews)
+        {
+            <div class="list-group-item">
+                <div class="d-flex w-100 justify-content-between">
+                    <h6 class="mb-1 fw-bold">@pReview.Autor</h6>
+                    <small>@pReview.Fecha.ToString("dd/MM/yyyy")</small>
+                </div>
+                <p class="mb-1 text-muted">Calificación: @pReview.Calificacion / 5</p>
+                <p class="mb-1">@pReview.Contenido</p>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <p class="text-muted">Aún no hay reseñas. ¡Sé el primero en opinar!</p>
+}
+
+<div class="card mt-4">
+    <div class="card-body bg-light">
+        <h5>Dejar una reseña</h5>
+        <form asp-controller="Catalogo" asp-action="AddReview" method="post">
+            <input type="hidden" name="id" value="@Model.Id" />
+            
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input type="text" name="author" class="form-control" required />
+            </div>
+            
+            <div class="mb-3">
+                <label class="form-label">Calificación (1-5)</label>
+                <input type="number" name="rating" class="form-control" min="1" max="5" required />
+            </div>
+            
+            <div class="mb-3">
+                <label class="form-label">Comentario</label>
+                <textarea name="content" class="form-control" rows="3" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Enviar Reseña</button>
+        </form>
+    </div>
+</div>
+            
+<div class="mt-4 mb-2">
+    <a asp-action="Index" class="btn btn-secondary">Volver al Catálogo</a>
+</div>
