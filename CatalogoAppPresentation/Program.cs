@@ -7,9 +7,20 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.IO;
 
+using Microsoft.AspNetCore.Authentication.Cookies;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Account/Login";
+        options.AccessDeniedPath = "/Account/AccessDenied";
+        options.ExpireTimeSpan = System.TimeSpan.FromMinutes(30);
+    });
+
 builder.Services.AddAuthorization();
 
 var dataDir = Path.Combine(builder.Environment.ContentRootPath, "data");
@@ -32,6 +43,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection(); 
 app.UseRouting();
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapStaticAssets();
 app.MapControllerRoute(

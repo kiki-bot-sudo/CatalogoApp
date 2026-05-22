@@ -1,8 +1,45 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Inicio";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-5">
+    <div class="row align-items-center mb-5">
+        <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0">
+            <h1 class="display-3 fw-bold mb-3">Bienvenido a <br /><span class="text-primary">Mi Catálogo de Videojuegos</span></h1>
+            <p class="lead text-muted mb-4">Descubre, explora y califica los mejores títulos de tus consolas favoritas. Sumérgete en mundos increíbles y comparte tu opinión.</p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <a asp-controller="Catalogo" asp-action="Index" class="btn btn-primary btn-lg px-4 me-md-2 rounded-pill shadow-sm">
+                    <i class="bi bi-controller"></i> Ver Catálogo
+                </a>
+                <a asp-controller="Catalogo" asp-action="Agregar" class="btn btn-outline-secondary btn-lg px-4 rounded-pill">
+                    <i class="bi bi-plus-circle"></i> Nuevo Juego
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="p-4 bg-light rounded-4 shadow-sm border border-2 text-center">
+                <h4 class="mb-3 text-secondary">¿Cómo funciona?</h4>
+                <div class="row g-3">
+                    <div class="col-12">
+                        <div class="d-flex align-items-center p-3 bg-white rounded border">
+                            <h2 class="mb-0 text-primary me-3">1</h2>
+                            <p class="mb-0 text-start"><strong>Explora:</strong> Navega por la colección de juegos.</p>
+                        </div>
+                    </div>
+                     <div class="col-12">
+                        <div class="d-flex align-items-center p-3 bg-white rounded border">
+                            <h2 class="mb-0 text-primary me-3">2</h2>
+                            <p class="mb-0 text-start"><strong>Revisa:</strong> Consulta detalles de consolas, géneros e historia.</p>
+                        </div>
+                    </div>
+                     <div class="col-12">
+                        <div class="d-flex align-items-center p-3 bg-white rounded border">
+                            <h2 class="mb-0 text-primary me-3">3</h2>
+                            <p class="mb-0 text-start"><strong>Opina:</strong> Deja tu reseña, ¡tu crítica es importante!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
